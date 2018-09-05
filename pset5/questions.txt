@@ -1,0 +1,37 @@
+ 1) What is Pneumonoultramicroscopicsilicovolcanoconiosis?
+
+ A) I don’t know the meaning of this word. But I segregated these words in to small segments. 
+
+  Pneumono is related to lungs.
+  Ultramicroscopic is which is very small and need to magnify those particles.
+  Silico which is related to silica. 
+  Volcanoconiosis is the disease occurred by eruption of volcano.
+
+  So, completely the word meaning is the disease that occurred in the lungs due to the      small  ashes or finest silica particles occurred due to the eruption of volcano.
+
+ Meaning :-     A lung disease caused by the inhalation of very fine silica, dust causing  inflammation in the lungs.
+
+ 2) According to its man page, What does getrusage do?
+
+ A) Getrusage is the command used in the terminal used to get resource usage like time and  memory used.
+
+ 3)  Per that same man page, how many members are in a variable of type               `struct rusage`?
+ A) 16.
+
+ 4) Why do you think we pass `before` and `after` by reference (instead of by value) to `calculate`, even though we're not changing their contents?
+
+ A) Even though we are not changing their contents, it’s better to use ‘before’ and ‘after’ by reference instead of by value. Because if we pass them by value the whole two structures will copied the values in to the  calculate and all this is waste of time and resources.
+         
+ 5) Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words, convince us that you indeed understand how that function’s for loop works?
+
+ A) After loading a text file and a dictionary, main() function starts reading a text symbol-by-symbol, with a goal of constructing separate words. A word is completed when one or more alphabetic symbols are read, and we encounted a non-alphanumeric character (like space bar or new line). Then we check our word for misspellings, reset the word index to zero, and continue the symbol reading the word index to zero, and continue the symbol reading the loop. If we encounter a digit, or a string tends to be too long, we traverse this word in the text, but we won’t check it for misspellings.   
+
+ 6) Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string like “ %s” to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?  
+
+ A) Here are several problems with fscanf - first, you must allocate a memory for a string before reading it from file, and there are no limits of a length of a word in a text file. Also you can’t write programme logic for skipping alphanumeric words, like this implementation of speller has. Overall, this approach gives us much less flexibility. 
+
+
+ 7) Why do you think we declared the parameters for check and load as const? 
+
+ A)Those parameters are never tried to modify in the functions because they are referred to  constants.
+
