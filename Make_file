@@ -1,0 +1,67 @@
+-> Make a file 
+
+-> Problem set 5 CS-50
+
+ ---------------------
+ 
+ The line below defines a variable called CC that specifies that make should use clang for   compiling.
+
+ CC = clang
+------------------------
+
+ The line below defines a variable called CFLAGS that specifies, in turn, that clang should  use some flags, most of which should look familiar.
+
+ CFLAGS = -fsanitize=integer -fsanitize=undefined -ggdb3 -O0 -Qunused-arguments -std=c11 - Wall -Werror -Wextra -Wno-sign-compare -Wshadow
+
+--------------------------
+
+ The line below defines a variable called EXE, the value of which will be our program’s name.
+
+EXE = speller
+
+-------------------------
+
+The line below defines a variable called HDRS, the value of which is a space-separated list of header files used by speller.
+
+HDRS = dictionary.h
+
+-------------------------
+
+The line below defines a variable called LIBS, the value of which is should be a space-separated list of libraries, each of which should be prefixed with -l. (Recall our use of -lcs50 earlier this term.) Odds are you won’t need to enumerate any libraries for this problem, but we’ve included the variable just in case.
+
+LIBS =
+
+--------------------------
+
+The line below defines a variable called SRCS, the value of which is a space-separated list of C files that will collectively implement speller.
+
+SRCS = speller.c dictionary.c
+
+----------------------------
+
+The line below defines a variable called OBJS, the value of which is identical to that of SRCS, except that each file’s extension is not .c but .o.
+
+OBJS = $(SRCS:.c=.o)
+
+-----------------------------
+
+The lines below define a "target" using these variables that tells make how to compile speller.
+
+$(EXE): $(OBJS) Makefile
+    $(CC) $(CFLAGS) -o $@ $(OBJS) $(LIBS)
+
+-------------------------------
+
+The line below specifies that our .o files all "depend on" dictionary.h and Makefile so that changes to either induce recompilation of the former when you run make.
+
+$(OBJS): $(HDRS) Makefile
+
+--------------------------------
+
+Finally, the lines below define another target for cleaning up this problem’s directory.
+
+clean:
+    rm -f core $(EXE) *.o
+----------------------------------
+
+
