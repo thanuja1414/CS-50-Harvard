@@ -1,7 +1,7 @@
 /* in this dictionary.c you have to create a function to
    load the dictionary and to check the word and to give the size of the word
  and unload the dictionary */
-
+// it is tough to implement
 #include<stdbool.h>
 #include<stdio.h>
 #include<ctype.h>
